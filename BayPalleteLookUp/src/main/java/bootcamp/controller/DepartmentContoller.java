@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import bootcamp.model.Department;
 import bootcamp.service.DepartmentService;
 
+@CrossOrigin(origins="http://35.231.206.44:3000")
 @RestController
 public class DepartmentContoller {
 	@Autowired
 	DepartmentService departmentService;
 	
 	
-	@CrossOrigin
+	//@CrossOrigin
 	@RequestMapping(value="/getDepartments", method=RequestMethod.GET)
 	public List<Department> getDepartments(){
 		try {
@@ -27,7 +28,7 @@ public class DepartmentContoller {
 			return null;
 		}
 	}
-	@CrossOrigin
+//	@CrossOrigin
 	@RequestMapping(value="/getClasses", method=RequestMethod.GET)
 	public List<Department> getClasses(){
 		try{
@@ -37,7 +38,7 @@ public class DepartmentContoller {
 			return null;
 		}
 	}
-	@CrossOrigin
+	//@CrossOrigin
 	@RequestMapping(value="/getCategories", method=RequestMethod.GET)
 	public List<Department> getCategories(){
 		try {
