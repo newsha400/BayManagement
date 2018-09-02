@@ -20,7 +20,7 @@ class LoadPallet extends Component {
 	componentDidMount() {
 		// this.state.pId = parseInt(this.props.match.params.id);
 
-		axios.get(`http://localhost:8081/getPaletteById?id=${this.state.id}`).then(res => {
+		axios.get(`http://35.231.206.44:8081/getPaletteById?id=${this.state.id}`).then(res => {
 				let buttonText = "Link"
 				if (res.data.bay>0) {
 					// console.log("I AM THE DANG BAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY", res.data.bay)
@@ -53,7 +53,7 @@ class LoadPallet extends Component {
 				state: {paletteInfo: this.state.palletInfo}
 			})
 		} else if (this.state.buttonText === `Unlink`) {
-			axios.get(`http://localhost:8081/unlinkPalette`,{
+			axios.get(`http://35.231.206.44:8081/unlinkPalette`,{
 				params: {
 					id: this.state.id
 				}

@@ -39,7 +39,7 @@ class EditSubBay extends Component {
     subBay.palette = this.state.palette;
     console.log("?????????")
     console.log(this.state.palette)
-    axios.post("http://localhost:8081/editBay",subBay).then((response) =>{
+    axios.post("http://35.231.206.44:8081/editBay",subBay).then((response) =>{
         console.log("**************")
         console.log(response.data.message)
         if(response.data.message === "Bay too wide"){
@@ -73,7 +73,7 @@ class EditSubBay extends Component {
         const pId = this.props.match.params.id;
         console.log(pId)
         this.props.history.push('/?msg=deleted')
-        axios.delete(`http://localhost:8081/deleteBay?id=${pId}`).then(res => {
+        axios.delete(`http://35.231.206.44:8081/deleteBay?id=${pId}`).then(res => {
             if(res.data.message == "Delete successful"){
                 swal({
                     title: "Delete successful",
@@ -104,7 +104,7 @@ class EditSubBay extends Component {
 
     componentWillMount(){
         
-        let departments = axios.get("http://localhost:8081/getDepartments").then((response)=>{
+        let departments = axios.get("http://35.231.206.44:8081/getDepartments").then((response)=>{
             const dropDowns = response.data.map((department,index)=>{
                 console.log(department.value)
                 if(department.value === this.state.dep){
@@ -117,7 +117,7 @@ class EditSubBay extends Component {
             })
         })  
 
-        let classes = axios.get("http://localhost:8081/getClasses").then((response)=>{
+        let classes = axios.get("http://35.231.206.44:8081/getClasses").then((response)=>{
             const dropDowns = response.data.map((department,index)=>{
                 console.log(department.value)
                 if(department.value === this.state.class){
@@ -130,7 +130,7 @@ class EditSubBay extends Component {
             })
         })  
 
-        let categories = axios.get("http://localhost:8081/getCategories").then((response)=>{
+        let categories = axios.get("http://35.231.206.44:8081/getCategories").then((response)=>{
             const dropDowns = response.data.map((department,index)=>{
                 console.log(department.value)
                 if(department.value === this.state.category){

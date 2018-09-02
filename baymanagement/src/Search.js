@@ -16,7 +16,7 @@ class Search extends Component {
 
         if (query) {
             if (query[0].toUpperCase() === "P") {
-                axios.get(`http://localhost:8081/getPaletteById?id=${query.substring(1)}`)
+                axios.get(`http://35.231.206.44:8081/getPaletteById?id=${query.substring(1)}`)
                     .then(res => {
                         console.log("axios comes back with: ",res.data.id)
                         if (res.data.id === 0) {
@@ -36,7 +36,7 @@ class Search extends Component {
 
             else if (query.substring(0,2).toUpperCase() === "MB") {
                 console.log("MB string check: ", query.substring(2))
-                axios.get(`http://localhost:8081/getMasterbayById?id=${query.substring(2)}`)
+                axios.get(`http://35.231.206.44:8081/getMasterbayById?id=${query.substring(2)}`)
                     .then(res => {
                         console.log("axios comes back with: ",res.data.id)
                         if (res.data.id === 0) {

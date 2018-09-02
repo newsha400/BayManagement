@@ -35,7 +35,7 @@ class EditPallet extends Component {
 		palette.paletteClass = this.state.class
 		palette.category = this.state.category;
 		palette.bay = this.state.bay
-		axios.post("http://localhost:8081/editPalette",palette).then((response) =>{
+		axios.post("http://35.231.206.44:8081/editPalette",palette).then((response) =>{
 		    console.log(response);
 		    console.log(response.data.dimensionMatch)
 		    if(response.data.dimensionMatch === false){
@@ -64,7 +64,7 @@ class EditPallet extends Component {
 		const pId = this.props.match.params.id;
 		console.log(pId)
 		this.props.history.push('/?msg=deleted')
-		axios.delete(`http://localhost:8081/deletePalette?id=${pId}`)
+		axios.delete(`http://35.231.206.44:8081/deletePalette?id=${pId}`)
 	}
 
 	changeWidth(event) {
@@ -105,7 +105,7 @@ class EditPallet extends Component {
  // https://github.com/newsha400/CapstoneProject/commit/0fe22faf57c8531e24b47af56a711064a78ab75c
 
 	componentWillMount() {
-		let departments = axios.get("http://localhost:8081/getDepartments").then((response) => {
+		let departments = axios.get("http://35.231.206.44:8081/getDepartments").then((response) => {
 			const dropDowns = response.data.map((department, index) => {
 				// console.log(department.value)
 				if (department.value === this.state.dep) {
@@ -118,7 +118,7 @@ class EditPallet extends Component {
 			})
 		})
 
-		let classes = axios.get("http://localhost:8081/getClasses").then((response) => {
+		let classes = axios.get("http://35.231.206.44:8081/getClasses").then((response) => {
 			const dropDowns = response.data.map((department, index) => {
 				console.log(department.value)
 				if (department.value === this.state.class) {
@@ -131,7 +131,7 @@ class EditPallet extends Component {
 			})
 		})
 
-		let categories = axios.get("http://localhost:8081/getCategories").then((response) => {
+		let categories = axios.get("http://35.231.206.44:8081/getCategories").then((response) => {
 			const dropDowns = response.data.map((department, index) => {
 				console.log(department.value)
 				if (department.value === this.state.category) {

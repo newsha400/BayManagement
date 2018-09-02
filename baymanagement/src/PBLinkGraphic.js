@@ -28,7 +28,7 @@ class PBLinkGraphic extends Component {
 
 	componentWillMount() {
 		let pId = this.props.match.params.id;
-		let bays = axios.get(`http://localhost:8081/getEmptyBays?id=${pId}`).then((response) => {
+		let bays = axios.get(`http://35.231.206.44:8081/getEmptyBays?id=${pId}`).then((response) => {
 			console.log(response.data)
 			const bayList = response.data.map((bay) => {
 				return (
@@ -60,7 +60,7 @@ class PBLinkGraphic extends Component {
 		palette.paletteClass = this.state.class
 		palette.category = this.state.category;
 		palette.bay = bay.id
-		axios.post(`http://localhost:8081/editPalette`, palette).then(() => {
+		axios.post(`http://35.231.206.44:8081/editPalette`, palette).then(() => {
 			swal({
 				title: "Pallet Linked Sucessfully",
 				text: `Pallet P${palette.id} linked successfully to Bay SB${palette.bay}.`,

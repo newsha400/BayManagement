@@ -22,7 +22,7 @@ class AddSubBay extends Component {
 	}
 
 	componentWillMount() {
-		let departments = axios.get("http://localhost:8081/getDepartments").then((response) => {
+		let departments = axios.get("http://35.231.206.44:8081/getDepartments").then((response) => {
 			const dropDowns = response.data.map((department, index) => {
 				// console.log(department.value)
 					return (<option value={department.value}>{department.value}</option>)
@@ -34,7 +34,7 @@ class AddSubBay extends Component {
 			})
 		})
 
-		let classes = axios.get("http://localhost:8081/getClasses").then((response) => {
+		let classes = axios.get("http://35.231.206.44:8081/getClasses").then((response) => {
 			const dropDowns = response.data.map((department, index) => {
 				console.log(department.value)
 					return (<option value={department.value}>{department.value}</option>)
@@ -45,7 +45,7 @@ class AddSubBay extends Component {
 			})
 		})
 
-		let categories = axios.get("http://localhost:8081/getCategories").then((response) => {
+		let categories = axios.get("http://35.231.206.44:8081/getCategories").then((response) => {
 			const dropDowns = response.data.map((department, index) => {
 				console.log(department.value)
 					return (<option value={department.value}>{department.value}</option>)
@@ -78,7 +78,7 @@ class AddSubBay extends Component {
 	submitHandler(event) {
 		event.preventDefault();
 		console.log(this.state.dep)
-			axios.post(`http://localhost:8081/addBay`, {
+			axios.post(`http://35.231.206.44:8081/addBay`, {
 					height: this.state.height,
 					width: this.state.width,
 					length: this.state.length,

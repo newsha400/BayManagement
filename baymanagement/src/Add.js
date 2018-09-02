@@ -27,20 +27,20 @@ class Add extends Component {
 	}
 
 	componentWillMount() {
-		axios.get("http://localhost:8081/getDepartments")
+		axios.get("http://35.231.206.44:8081/getDepartments")
 			.then((response) => {
 				console.log("departments on load: ", response.data)
 				this.setState({ deps: response.data,
 				dep:response.data[0].value })
 			})
 
-		axios.get("http://localhost:8081/getClasses").then((response) => {
+		axios.get("http://35.231.206.44:8081/getClasses").then((response) => {
 			console.log("classes: ", response.data)
 			this.setState({ classes: response.data,
 			paletteClass:response.data[0].value })
 		})
 
-		axios.get("http://localhost:8081/getCategories").then((response) => {
+		axios.get("http://35.231.206.44:8081/getCategories").then((response) => {
 			console.log("categories on load: ", response.data)
 			this.setState({ categories: response.data,
 			category:response.data[0].value })
@@ -76,7 +76,7 @@ class Add extends Component {
 		event.preventDefault();
 		if (this.state.selectedOption === 'Pallet') {
 			console.log("dept: ", this.state.dep)
-			axios.post(`http://localhost:8081/addPalette`, {
+			axios.post(`http://35.231.206.44:8081/addPalette`, {
 				height: this.state.height,
 				width: this.state.width,
 				length: this.state.length,
@@ -95,7 +95,7 @@ class Add extends Component {
 				});
 		}
 		else if (this.state.selectedOption === 'Master Bay') {
-			axios.post(`http://localhost:8081/addMasterBay`, {
+			axios.post(`http://35.231.206.44:8081/addMasterBay`, {
 				height: this.state.height,
 				width: this.state.width,
 				length: this.state.length,
