@@ -16,19 +16,35 @@ public class DepartmentContoller {
 	@Autowired
 	DepartmentService departmentService;
 	
+	
 	@CrossOrigin
 	@RequestMapping(value="/getDepartments", method=RequestMethod.GET)
 	public List<Department> getDepartments(){
+		try {
 		return departmentService.getDepartments();
+		} catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	@CrossOrigin
 	@RequestMapping(value="/getClasses", method=RequestMethod.GET)
 	public List<Department> getClasses(){
+		try{
 		return departmentService.getClasses();
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
 	}
 	@CrossOrigin
 	@RequestMapping(value="/getCategories", method=RequestMethod.GET)
 	public List<Department> getCategories(){
+		try {
 		return departmentService.getCategories();
+		} catch (Exception e){
+			e.printStackTrace();
+			return null;
+		}
 	}
 }
