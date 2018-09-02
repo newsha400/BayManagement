@@ -1,0 +1,30 @@
+package bootcamp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import bootcamp.dao.BayDao;
+import bootcamp.model.Bay;
+
+public class BayService {
+
+	@Autowired
+	BayDao bayDao;
+	
+    
+    public void addBay(Bay bay) {
+    	bayDao.addBay(bay);
+    }
+    
+    public Bay getBayById(String id) {
+    	return bayDao.getBayById(id);
+    }
+    
+    public void editBay(Bay bay) {
+    	bayDao.editBay(bay);
+    }
+     
+    public void deleteBay(String id) {
+    	bayDao.deleteBay(id);
+    }
+	
+	}
+

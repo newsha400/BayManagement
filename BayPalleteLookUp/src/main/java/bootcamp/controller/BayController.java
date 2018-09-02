@@ -49,6 +49,12 @@ public class BayController {
     public List<Bay> getEmptyBays(@RequestParam("id") int paletteId){
     	return bayService.getEmptyBays(paletteId);
     }
+	
+	@CrossOrigin
+    @RequestMapping(value="/test", method=RequestMethod.GET)
+    public int getEmptyBays(){
+    	return 1;
+    }
     
 // A sample bay object in json:    
 // {"id": "B1", "width": 34, "height": 34, "length": 34, "dep": "D1", "bayClass": "C1", "category": "CAT1", "masterbay": "MB1", "palette": "P1"}

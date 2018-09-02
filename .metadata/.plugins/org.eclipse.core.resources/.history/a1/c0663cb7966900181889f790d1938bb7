@@ -1,0 +1,19 @@
+# H2
+#spring.h2.console.enabled=true
+#spring.h2.console.path=/h2
+
+#Connection Pool
+spring.datasource.hikari.maximum-pool-size=2
+
+# Datasource
+#spring.jpa.hibernate.ddl-auto=create
+spring.datasource.url=jdbc:mysql://35.237.79.205:3306/baymanagement?useSSL=false
+spring.datasource.username=bayUser
+spring.datasource.password=x
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+## Datasource
+#spring.datasource.url=jdbc:h2:mem:testdb
+#spring.datasource.username=sa
+#spring.datasource.password=
+#spring.datasource.driver-class-name=org.h2.Driver
